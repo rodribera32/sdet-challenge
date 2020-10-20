@@ -1,0 +1,26 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "rodrigoberasain",
+    "children" : [ {
+      "name" : "12870@rodrigoberasain.main(1)",
+      "children" : [ {
+        "name" : "Check second product of second result page availability",
+        "uid" : "5e2be69e16adb5a3",
+        "parentUid" : "2f2659a8c1f662aa4277060922840cc9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1603219028670,
+          "stop" : 1603219035194,
+          "duration" : 6524
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "2f2659a8c1f662aa4277060922840cc9"
+    } ],
+    "uid" : "f7befa4d19481d04226ddcf4893e4851"
+  } ]
+}

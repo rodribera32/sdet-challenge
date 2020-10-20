@@ -1,0 +1,11 @@
+[ {
+  "uid" : "5e2be69e16adb5a3",
+  "name" : "Check second product of second result page availability",
+  "time" : {
+    "start" : 1603219028670,
+    "stop" : 1603219035194,
+    "duration" : 6524
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

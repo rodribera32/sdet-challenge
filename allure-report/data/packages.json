@@ -1,0 +1,22 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "test.java.tests.SearchTest",
+    "children" : [ {
+      "name" : "search",
+      "uid" : "5e2be69e16adb5a3",
+      "parentUid" : "7bf925385d7b228d23b2fab65df6d853",
+      "status" : "passed",
+      "time" : {
+        "start" : 1603219028670,
+        "stop" : 1603219035194,
+        "duration" : 6524
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "test.java.tests.SearchTest"
+  } ]
+}
