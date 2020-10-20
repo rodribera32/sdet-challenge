@@ -1,15 +1,14 @@
 package main.java.utils;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.ArrayList;
 
 public class BasePage {
 
@@ -140,8 +139,17 @@ public class BasePage {
 		return element.getText();
 	}
 
+	protected String getValue(WebElement element) {
+		waitForElement(element);
+		return element.getAttribute("value");
+	}
+
 	public void waitForElement(WebElement element) {
 		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+
+	public void waitUntilElementIsNotVisible(By locator) {
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
 	}
 
 
@@ -149,6 +157,20 @@ public class BasePage {
 		waitForElement(iframe);
 		driver.switchTo().frame(iframe);
 	}
+
+	public void switchTab (Integer tabIndex) throws InterruptedException {
+		Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
+		String browserName = caps.getBrowserName();
+		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+		if (browserName.contains("chrome")) {
+			driver.switchTo().window(tabs.get(tabIndex - 1));
+		} else {
+			// This is bad practice but Firefox is opening a new windows and it takes time to load the aliexpress page
+			Thread.sleep(2000);
+			driver.switchTo().window(tabs.get(tabIndex - 1));
+		}
+	}
+
 
 	/**
 	 * Returns true if the given element is enabled and visible.
