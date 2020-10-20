@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>AutomationTraining </groupId>
+  <artifactId>AutomationExercise</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<jre.level>1.7</jre.level>
+		<jdk.level>1.7</jdk.level>
+		<aspectj.version>1.9.2</aspectj.version>
+	</properties>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>${jdk.level}</source>
+					<target>${jdk.level}</target>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.0</version>
+				<inherited>true</inherited>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>TestNG.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<argLine>
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+					</argLine>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjweaver</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+	
+  <dependencies>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <!--version>3.141.59</version-->
+        <version>3.14.0</version>
+        <scope>compile</scope>
+        
+    </dependency>
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.3</version>
+			<scope>compile</scope>
+		</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+	  <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+	  <dependency>
+		  <groupId>io.qameta.allure</groupId>
+		  <artifactId>allure-testng</artifactId>
+		  <version>2.13.6</version>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>io.github.bonigarcia</groupId>
+		  <artifactId>webdrivermanager</artifactId>
+		  <version>4.2.2</version>
+		  <scope>compile</scope>
+	  </dependency>
+
+  </dependencies>
+
+	<reporting>
+		<excludeDefaults>true</excludeDefaults>
+		<plugins>
+			<plugin>
+				<groupId>io.qameta.allure</groupId>
+				<artifactId>allure-maven</artifactId>
+				<version>2.1.0</version>
+			</plugin>
+		</plugins>
+	</reporting>
+</project>

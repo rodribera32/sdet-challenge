@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Oct 20 15:37:08 UYT 2020","Tue Oct 20 15:37:15 UYT 2020","6524","Suite","Test","test.java.tests.SearchTest","test.java.tests.SearchTest","search","Check second product of second result page availability","As a Customer we want to see if the second ad from the second results page when searching for ""Iphone"" on www.aliexpress.com has at least 1 item to be bought."
