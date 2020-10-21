@@ -11,21 +11,22 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class WebSetup extends BaseTestWeb {
 
-	static WebDriver prepareDevice() throws MalformedURLException {
-		String browser = "chrome";
-
-		if (browser == "chrome") {
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--disable-notifications");
-			driver = new ChromeDriver(options);
-		} else {
-			WebDriverManager.firefoxdriver().setup();
-			FirefoxProfile profile = new FirefoxProfile();
-			profile.setPreference("permissions.default.desktop-notification", 1);
-			FirefoxOptions firefoxOptions = new FirefoxOptions();
-			firefoxOptions.setCapability(FirefoxDriver.PROFILE, profile);
-			driver = new FirefoxDriver(firefoxOptions);
+	static WebDriver prepareDevice(String browser) throws MalformedURLException {
+		switch (browser) {
+			case "chrome":
+				WebDriverManager.chromedriver().setup();
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--disable-notifications");
+				driver = new ChromeDriver(options);
+				break;
+			case "firefox":
+				WebDriverManager.firefoxdriver().setup();
+				FirefoxProfile profile = new FirefoxProfile();
+				profile.setPreference("permissions.default.desktop-notification", 1);
+				FirefoxOptions firefoxOptions = new FirefoxOptions();
+				firefoxOptions.setCapability(FirefoxDriver.PROFILE, profile);
+				driver = new FirefoxDriver(firefoxOptions);
+				break;
 		}
 
 		driver.manage().deleteAllCookies();
