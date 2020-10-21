@@ -86,9 +86,7 @@ public class BasePage {
 	
 	protected void clickJavaScript(WebElement element) {
 		waitForElement(element);
-		
 		Actions actions = new Actions(driver);
-
 		actions.moveToElement(element).click().perform();
 	}
 
@@ -165,7 +163,7 @@ public class BasePage {
 		if (browserName.contains("chrome")) {
 			driver.switchTo().window(tabs.get(tabIndex - 1));
 		} else {
-			// This is bad practice but Firefox is opening a new windows and it takes time to load the aliexpress page
+			// Thread.sleep is a bad practice but Firefox is opening a new windows.
 			Thread.sleep(2000);
 			driver.switchTo().window(tabs.get(tabIndex - 1));
 		}

@@ -23,8 +23,6 @@ public class HomePage extends BasePage {
   @FindBy(className= "search-button")
   private WebElement searchButton;
 
-  // -- GETTERS --
-
   // -- SETTERS --
 
   public HomePage setSearchField (String value) {
@@ -35,7 +33,6 @@ public class HomePage extends BasePage {
 
   // -- METHODS --
 
-  // - Constructor
   public HomePage (WebDriver driver) {
     super(driver);
   }

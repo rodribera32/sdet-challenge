@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
-
 public class ItemDetailsPage extends BasePage {
+
+    // -- SELECTORS --
     @FindBy(className = "product-info")
     private WebElement productInfo;
 
@@ -19,6 +19,8 @@ public class ItemDetailsPage extends BasePage {
 
     @FindBy(className = "product-quantity-tip")
     private WebElement productNumberAvailable;
+
+    // -- METHODS --
 
     public ItemDetailsPage(WebDriver driver) {
         super(driver);

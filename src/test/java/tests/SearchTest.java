@@ -1,10 +1,11 @@
 package test.java.tests;
 
-import io.qameta.allure.Description;
 import main.java.pageObjects.ItemDetailsPage;
 import main.java.pageObjects.ResultsPage;
-import org.testng.Assert;
 import test.java.utils.setup.BaseTestWeb;
+
+import io.qameta.allure.Description;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.Parameters;
 
@@ -17,7 +18,7 @@ public class SearchTest extends BaseTestWeb {
 		ResultsPage resultsPage = homePage.searchItem(itemToSearch);
 		ItemDetailsPage itemDetailsPage =
 				resultsPage
-						.goToAnotherPage("2")
+						.goToSpecificPage("2")
 						.openItemByNumber(2);
 
 		Assert.assertTrue(itemDetailsPage.isBuyNowButtonAvailable(), "Buy now button is not available");

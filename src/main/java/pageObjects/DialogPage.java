@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class DialogPage extends BasePage {
 
-  // --- SELECTORS ---
+  // -- SELECTORS --
   // - Dialog Results Page -
   @FindBy(className = "next-dialog-body")
   private WebElement dialogResultsPage;
@@ -15,14 +15,14 @@ public class DialogPage extends BasePage {
   @FindBy(className = "next-dialog-close")
   private WebElement closeDialogResultsPageButton;
 
-  // -- Dialog Home Page --
+  // - Dialog Home Page -
   @FindBy(css = "body iframe[src*=campaign]")
   private WebElement homePageIframeDialog;
 
   @FindBy(css = ".rax-image[style*='top']")
   private WebElement closeDialogHomePageButton;
 
-  // --- METHODS ---
+  // -- METHODS --
 
   public DialogPage (WebDriver driver) {
     super(driver);

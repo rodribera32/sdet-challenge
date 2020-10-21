@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>AutomationTraining </groupId>
-  <artifactId>AutomationExercise</artifactId>
+  <groupId>SDETChallenge </groupId>
+  <artifactId>SDETChallenge</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<jre.level>1.7</jre.level>
-		<jdk.level>1.7</jdk.level>
+		<jre.level>1.8</jre.level>
+		<jdk.level>1.8</jdk.level>
 		<aspectj.version>1.9.2</aspectj.version>
 	</properties>
 
