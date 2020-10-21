@@ -50,7 +50,7 @@ allure open
 allure generate --clean
 ```
 
-## Report
+## Execution - Example
 Gif file attached with the execution of the tests and the report generated (Gif file on Video folder)
 
 ![til](https://github.com/rodribera32/sdet-challenge/blob/dev/video/challenge.gif)
